@@ -1,3 +1,4 @@
+import FollowBar from "./layout/FollowBar";
 import Sidebar from "./layout/Sidebar";
 
 
@@ -20,6 +21,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     >
                         { children }
                     </div>
+                    <FollowBar />
                 </div>
             </div>
 
