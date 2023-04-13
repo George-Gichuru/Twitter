@@ -19,9 +19,9 @@ const RegisterModal = () => {
         try {
             setIsLoading(true);
 
-            // login
+            // register
 
-          loginModal.onClose();
+          registerModal.onClose();
         } catch (error) {
             console.log(error)
         }
@@ -29,7 +29,7 @@ const RegisterModal = () => {
             setIsLoading(false);
         }
 
-    }, [loginModal])
+    }, [registerModal])
 
     const bodyContent = (
         <div className="flex flex-col gap-4">
@@ -37,6 +37,18 @@ const RegisterModal = () => {
                 placeholder="Email"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
+                disabled={isLoading}
+            />
+            <Input 
+                placeholder="Name"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+                disabled={isLoading}
+            />
+            <Input 
+                placeholder="Username"
+                onChange={(e) => setUsername(e.target.value)}
+                value={username}
                 disabled={isLoading}
             />
 
@@ -49,16 +61,30 @@ const RegisterModal = () => {
         </div>
     )
 
+    const footerContent = (
+        <div className="text-neutral-400 text-center mt-4">
+            <p>
+                Already have an Account?
+                <span className="text-white cursor-pointer hover:underline"
+                >  Sign In
+
+                </span>
+
+            </p>
+        </div>
+    )
+
 
     return(
         <Modal 
             disabled={isLoading}
-            isOpen={loginModal.isOpen}
-            title="Login"
-            actionLabel="Sign In"
-            onClose={loginModal.onClose}
+            isOpen={registerModal.isOpen}
+            title="Create an Account"
+            actionLabel="Register"
+            onClose={registerModal.onClose}
             onSubmit={onSubmit}
             body={bodyContent}
+            footer={footerContent}
         />
     )
 }
