@@ -1,7 +1,7 @@
 interface ButtonProps {
   label: string;
   secondary?: boolean;
-  fullWidth?: boolean;
+  fullwidth?: boolean;
   large?: boolean;
   onClick: () => void;
   disabled?: boolean;
@@ -11,7 +11,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({ 
   label, 
   secondary, 
-  fullWidth, 
+  fullwidth, 
   onClick, 
   large, 
   disabled, 
@@ -29,7 +29,7 @@ const Button: React.FC<ButtonProps> = ({
         hover:opacity-80
         transition
         border-2
-        ${fullWidth ? 'w-full' : 'w-fit'}
+        ${fullwidth ? 'w-full' : 'w-fit'}
         ${secondary ? 'bg-white' : 'bg-sky-500'}
         ${secondary ? 'text-black' : 'text-white'}
         ${secondary ? 'border-black' : 'border-sky-500'}
