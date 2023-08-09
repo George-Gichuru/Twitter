@@ -8,8 +8,14 @@ import RegisterModal from '../components/modals/RegisterModal'
 import '../styles/globals.css'
 import EditModal from '../components/modals/EditModal';
 
+import Head from "next/head"
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
+    <>
+    <Head>
+        <link rel="shortcut icon" href="/favicon.ico" />
+    </Head>
     <SessionProvider session={pageProps.session}>
       <Toaster />
       <RegisterModal />
@@ -19,5 +25,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </Layout>
     </SessionProvider>
+    </>
   )
 }
